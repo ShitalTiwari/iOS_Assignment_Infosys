@@ -13,7 +13,12 @@
 		49FB2B5B20F4AEF100E7AA71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FB2B5920F4AEF100E7AA71 /* LaunchScreen.storyboard */; };
 		49FB2B6620F4AEF200E7AA71 /* iOS_InfosysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B6520F4AEF200E7AA71 /* iOS_InfosysTests.swift */; };
 		49FB2B7120F4AEF200E7AA71 /* iOS_InfosysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B7020F4AEF200E7AA71 /* iOS_InfosysUITests.swift */; };
-		D8ECDC97568E6AECB474BBEC /* libPods-iOS_Infosys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8980803A7A9CE6FEDA170FEA /* libPods-iOS_Infosys.a */; };
+		49FB2B8220F4B1D100E7AA71 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B8120F4B1D100E7AA71 /* CommonMethods.swift */; };
+		49FB2B8420F4B1E200E7AA71 /* ImagesContainerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FB2B8320F4B1E200E7AA71 /* ImagesContainerTableViewCell.xib */; };
+		49FB2B8620F4B1F300E7AA71 /* ImagesContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B8520F4B1F300E7AA71 /* ImagesContainerTableViewCell.swift */; };
+		49FB2B8820F4B34300E7AA71 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B8720F4B34300E7AA71 /* APICall.swift */; };
+		49FB2B8C20F4B50B00E7AA71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB2B8B20F4B50B00E7AA71 /* Constants.swift */; };
+		543BDB1586159A713A3E8B5C /* Pods_iOS_Infosys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A33055E706982BC4299ECF /* Pods_iOS_Infosys.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +52,13 @@
 		49FB2B6C20F4AEF200E7AA71 /* iOS_InfosysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_InfosysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FB2B7020F4AEF200E7AA71 /* iOS_InfosysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_InfosysUITests.swift; sourceTree = "<group>"; };
 		49FB2B7220F4AEF200E7AA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8980803A7A9CE6FEDA170FEA /* libPods-iOS_Infosys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_Infosys.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FB2B8120F4B1D100E7AA71 /* CommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
+		49FB2B8320F4B1E200E7AA71 /* ImagesContainerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesContainerTableViewCell.xib; sourceTree = "<group>"; };
+		49FB2B8520F4B1F300E7AA71 /* ImagesContainerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesContainerTableViewCell.swift; sourceTree = "<group>"; };
+		49FB2B8720F4B34300E7AA71 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		49FB2B8B20F4B50B00E7AA71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49FB2B8D20F4B77600E7AA71 /* iOS_Infosys-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS_Infosys-Bridging-Header.h"; sourceTree = "<group>"; };
+		57A33055E706982BC4299ECF /* Pods_iOS_Infosys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Infosys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6932CAA0C52F24381B92E72 /* Pods-iOS_Infosys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Infosys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Infosys/Pods-iOS_Infosys.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8ECDC97568E6AECB474BBEC /* libPods-iOS_Infosys.a in Frameworks */,
+				543BDB1586159A713A3E8B5C /* Pods_iOS_Infosys.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,7 @@
 		49FB2B4420F4AEF000E7AA71 = {
 			isa = PBXGroup;
 			children = (
+				49FB2B8D20F4B77600E7AA71 /* iOS_Infosys-Bridging-Header.h */,
 				49FB2B4F20F4AEF100E7AA71 /* iOS_Infosys */,
 				49FB2B6420F4AEF200E7AA71 /* iOS_InfosysTests */,
 				49FB2B6F20F4AEF200E7AA71 /* iOS_InfosysUITests */,
@@ -111,8 +123,10 @@
 		49FB2B4F20F4AEF100E7AA71 /* iOS_Infosys */ = {
 			isa = PBXGroup;
 			children = (
+				49FB2B8020F4B17700E7AA71 /* Controller */,
+				49FB2B7F20F4B17000E7AA71 /* Model */,
+				49FB2B7E20F4B15600E7AA71 /* ViewModel */,
 				49FB2B5020F4AEF100E7AA71 /* AppDelegate.swift */,
-				49FB2B5220F4AEF100E7AA71 /* ViewController.swift */,
 				49FB2B5720F4AEF100E7AA71 /* Assets.xcassets */,
 				49FB2B5920F4AEF100E7AA71 /* LaunchScreen.storyboard */,
 				49FB2B5C20F4AEF100E7AA71 /* Info.plist */,
@@ -138,10 +152,37 @@
 			path = iOS_InfosysUITests;
 			sourceTree = "<group>";
 		};
+		49FB2B7E20F4B15600E7AA71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49FB2B8520F4B1F300E7AA71 /* ImagesContainerTableViewCell.swift */,
+				49FB2B8320F4B1E200E7AA71 /* ImagesContainerTableViewCell.xib */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49FB2B7F20F4B17000E7AA71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49FB2B8120F4B1D100E7AA71 /* CommonMethods.swift */,
+				49FB2B8720F4B34300E7AA71 /* APICall.swift */,
+				49FB2B8B20F4B50B00E7AA71 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49FB2B8020F4B17700E7AA71 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49FB2B5220F4AEF100E7AA71 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		562BCC589C52223FAEB5866F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8980803A7A9CE6FEDA170FEA /* libPods-iOS_Infosys.a */,
+				57A33055E706982BC4299ECF /* Pods_iOS_Infosys.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +198,7 @@
 				49FB2B4920F4AEF100E7AA71 /* Sources */,
 				49FB2B4A20F4AEF100E7AA71 /* Frameworks */,
 				49FB2B4B20F4AEF100E7AA71 /* Resources */,
-				F14186F8F5F996506DF92085 /* [CP] Copy Pods Resources */,
+				B4F6C9D3ED58BBA1B0B548CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FB2B5B20F4AEF100E7AA71 /* LaunchScreen.storyboard in Resources */,
+				49FB2B8420F4B1E200E7AA71 /* ImagesContainerTableViewCell.xib in Resources */,
 				49FB2B5820F4AEF100E7AA71 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,22 +334,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F14186F8F5F996506DF92085 /* [CP] Copy Pods Resources */ = {
+		B4F6C9D3ED58BBA1B0B548CE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Infosys/Pods-iOS_Infosys-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Infosys/Pods-iOS_Infosys-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Infosys/Pods-iOS_Infosys-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Infosys/Pods-iOS_Infosys-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -317,7 +361,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FB2B8220F4B1D100E7AA71 /* CommonMethods.swift in Sources */,
+				49FB2B8620F4B1F300E7AA71 /* ImagesContainerTableViewCell.swift in Sources */,
+				49FB2B8820F4B34300E7AA71 /* APICall.swift in Sources */,
 				49FB2B5320F4AEF100E7AA71 /* ViewController.swift in Sources */,
+				49FB2B8C20F4B50B00E7AA71 /* Constants.swift in Sources */,
 				49FB2B5120F4AEF100E7AA71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +542,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.infosys.iOS-Infosys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS_Infosys-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.infosys.iOS-Infosys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS_Infosys-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

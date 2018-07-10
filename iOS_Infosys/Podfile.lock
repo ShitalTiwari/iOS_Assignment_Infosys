@@ -1,16 +1,20 @@
 PODS:
+  - ReachabilitySwift (4.1.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - ReachabilitySwift
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ReachabilitySwift
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 030db63739d74b65e7e9357ad8e71b6b2d1399c7
+PODFILE CHECKSUM: 04e784b8cfc456a5259078d0d841b790ab1fe101
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2
