@@ -100,25 +100,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
+        cell.setNeedsUpdateConstraints()
+        cell.updateConstraintsIfNeeded()
+        
         return cell
-        
-        
     }
     
     //Sending tableviewcell height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if self.tableData.count > 0 {
-            let dict = self.tableData[indexPath.row]
-            if dict[Constants.GlobalConstants.descriptionKey] as? String != nil {
-                let height = CommonMethods.getCellHeight(text: dict[Constants.GlobalConstants.descriptionKey] as! String, width: tableView.bounds.width, font: UIFont.systemFont(ofSize: 17.0))
-                return height + 54 //Adding constant for height of title label and constraints constants
-            } else if dict[Constants.GlobalConstants.titleKey] as? String != nil {
-                return 54
-            }
-            
-        }
-        return 0
+        return UITableViewAutomaticDimension
     }
 
     //Method to download images from server and save them in temporary property
