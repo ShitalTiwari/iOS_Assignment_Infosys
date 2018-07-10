@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tblImageContainer?.tableFooterView = UIView()
         self.tblImageContainer?.translatesAutoresizingMaskIntoConstraints = false
         self.tblImageContainer?.addSubview(self.refreshControl)
+        self.tblImageContainer?.allowsSelection = false
         self.tblImageContainer?.register(UINib(nibName: Constants.GlobalConstants.strTableCellIdentifier, bundle: nil), forCellReuseIdentifier: Constants.GlobalConstants.strTableCellIdentifier)
         //Adding table view to view controller as subView
         
@@ -45,7 +46,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Adding constraints to table view
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[tblView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tblView": self.tblImageContainer!]))
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[tblView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["tblView":self.tblImageContainer!]))
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.updatTableData()
     }
     
@@ -153,7 +157,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let checkInternet = Reachability()
         checkInternet?.whenReachable = { reachability in
             if reachability.connection == .wifi || reachability.connection == .cellular {
+                checkInternet?.stopNotifier()
                 APICall().getAPIDataFromURL { (response) in
+                    SVProgressHUD.dismiss()
                     if (response[Constants.GlobalConstants.rowsKey] as? [[String: AnyObject]]) != nil {
                         //Setting Navigation Bar Title
                         
@@ -170,6 +176,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                 }
             } else {
+                SVProgressHUD.dismiss()
+                checkInternet?.stopNotifier()
                 let alert = UIAlertController(title: "ERROR", message: "No Internet Connection!", preferredStyle: UIAlertControllerStyle.actionSheet)
                 let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
                 alert.addAction(alertAction)
@@ -178,6 +186,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         checkInternet?.whenUnreachable = { _ in
+            SVProgressHUD.dismiss()
+            checkInternet?.stopNotifier()
+            
+            let alert = UIAlertController(title: "ERROR", message: "No Internet Connection!", preferredStyle: UIAlertControllerStyle.actionSheet)
+            let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(alertAction)
+        }
+        
+        do {
+            try checkInternet?.startNotifier()
+        } catch  {
+            SVProgressHUD.dismiss()
+            checkInternet?.stopNotifier()
+            
             let alert = UIAlertController(title: "ERROR", message: "No Internet Connection!", preferredStyle: UIAlertControllerStyle.actionSheet)
             let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(alertAction)
