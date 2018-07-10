@@ -33,4 +33,49 @@ class iOS_InfosysTests: XCTestCase {
         }
     }
     
+    func testUserData() {
+        guard let gitUrl = URL(string: Constants.GlobalConstants.apiURL) else { return }
+        let promise = expectation(description: "Simple Request")
+        URLSession.shared.dataTask(with: gitUrl) { (data, response
+            , error) in
+            guard let data = data else { return }
+            
+            if let responseString = String(data: data, encoding: String.Encoding.ascii) {
+                
+                if let jsonData = responseString.data(using: String.Encoding.utf8) {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: AnyObject]
+                        
+                        if (json[Constants.GlobalConstants.rowsKey] as? [[String: AnyObject]]) != nil {
+                            XCTAssertTrue(json[Constants.GlobalConstants.titleKey] as! String != "")
+                            promise.fulfill()
+                        }
+                        
+                    } catch {
+                        print("Err", error)
+                    }
+                }
+            }
+            }.resume()
+        waitForExpectations(timeout: 20, handler: nil)
+    }
+    
+    func testUserDataFailCase() {
+        guard let gitUrl = URL(string: Constants.GlobalConstants.apiURL) else { return }
+        let promise = expectation(description: "Simple Request")
+        URLSession.shared.dataTask(with: gitUrl) { (data, response
+            , error) in
+            guard let data = data else { return }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+                if let result = json as? NSDictionary {
+                    XCTAssertTrue(result[Constants.GlobalConstants.titleKey] as! String != "")
+                    promise.fulfill()
+                }
+            } catch let err {
+                print("Err", err)
+            }
+            }.resume()
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
